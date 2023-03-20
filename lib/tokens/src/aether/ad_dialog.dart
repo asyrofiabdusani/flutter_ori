@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show clampDouble;
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../../tokens/dart/dart_color.dart';
-import '../../tokens/dart/dart_font.dart';
+import '../../dart/dart_color.dart';
+import '../../dart/dart_font.dart';
+
 
 const EdgeInsets _defaultInsetPadding =
     EdgeInsets.symmetric(horizontal: 40.0, vertical: 24.0);

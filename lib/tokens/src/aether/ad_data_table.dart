@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'ad_checkbox.dart';
 import 'dart:math' as math;
-import '../../tokens/dart/dart_color.dart';
-import '../../tokens/dart/dart_font.dart';
+import '../../dart/dart_color.dart';
+import '../../dart/dart_font.dart';
+
 
 typedef DataColumnSortCallback = void Function(int columnIndex, bool ascending);
 

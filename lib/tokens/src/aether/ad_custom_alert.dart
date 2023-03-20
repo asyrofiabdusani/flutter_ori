@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../tokens/dart/dart_color.dart';
-import '../../tokens/dart/dart_font.dart';
+import '../../dart/dart_color.dart';
+import '../../dart/dart_font.dart';
 
 class AdAlert extends StatefulWidget {
   AdAlert({

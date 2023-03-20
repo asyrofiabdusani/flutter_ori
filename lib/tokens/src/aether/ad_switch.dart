@@ -6,7 +6,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../../tokens/dart/dart_color.dart';
+import '../../dart/dart_color.dart';
 
 // const double _kTrackHeight = 14.0;
 // const double _kTrackWidth = 33.0;

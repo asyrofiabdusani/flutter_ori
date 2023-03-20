@@ -3,8 +3,9 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart' show clampDouble;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../../tokens/dart/dart_font.dart';
-import '../../tokens/dart/dart_color.dart';
+import '../../dart/dart_font.dart';
+import '../../dart/dart_color.dart';
+
 
 // Some design constants
 const double _kChipHeight = 32.0;

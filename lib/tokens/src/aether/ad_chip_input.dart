@@ -2,7 +2,8 @@ import 'package:flutter/foundation.dart' show clampDouble;
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import '../../tokens/dart/dart_color.dart';
+import '../../dart/dart_color.dart';
+
 import 'ad_chip.dart' as ad_chip;
 
 class AdInputChip extends StatelessWidget

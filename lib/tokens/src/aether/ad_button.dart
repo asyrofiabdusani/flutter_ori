@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../tokens/dart/dart_color.dart';
-import '../../tokens/dart/dart_font.dart';
-import '../../tokens/dart/dart_size.dart';
+import '../../dart/dart_color.dart';
+import '../../dart/dart_font.dart';
+import '../../dart/dart_size.dart';
+
 
 class AdButtonPrimary extends StatefulWidget {
   const AdButtonPrimary({
