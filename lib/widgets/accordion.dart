@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
+import 'package:flutter_ori/tokens/dart/dart_size.dart';
 
 class Accordion extends StatefulWidget {
   final String title;
-  final String content;
+  final Widget content;
 
   const Accordion({Key? key, required this.title, required this.content})
       : super(key: key);
@@ -13,7 +14,7 @@ class Accordion extends StatefulWidget {
 
 class _AccordionState extends State<Accordion> {
   // Show or hide the content
-  bool _showContent = false;
+  bool _showContent = true;
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +23,35 @@ class _AccordionState extends State<Accordion> {
         margin: const EdgeInsets.all(10),
         child: Column(children: [
           // The title
-          ListTile(
-            tileColor: adrColor.backgroundPrimaryContainer,
-            title: Text(
-              widget.title,
-              style: TextStyle(fontWeight: FontWeight.bold),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(adrSize.radiusSmall),
+                  topRight: Radius.circular(adrSize.radiusSmall)),
+              color: adrColor.backgroundPrimaryContainer,
             ),
-            trailing: IconButton(
-              icon: Icon(
-                  _showContent ? Icons.arrow_drop_up : Icons.arrow_drop_down),
-              onPressed: () {
-                setState(() {
-                  _showContent = !_showContent;
-                });
-              },
+            child: ListTile(
+              title: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  widget.title,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                ),
+              ),
+              trailing: IconButton(
+                icon: Icon(
+                  _showContent
+                      ? Icons.keyboard_arrow_up_rounded
+                      : Icons.keyboard_arrow_down_rounded,
+                  size: 30,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _showContent = !_showContent;
+                  });
+                },
+              ),
             ),
           ),
           // Show or hide the content based on the state
@@ -43,7 +59,7 @@ class _AccordionState extends State<Accordion> {
               ? Container(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                  child: Text(widget.content),
+                  child: widget.content,
                 )
               : Container()
         ]),
