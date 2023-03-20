@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import '../../dart/dart_color.dart';
 import '../../dart/dart_font.dart';
 
+
 typedef DataColumnSortCallback = void Function(int columnIndex, bool ascending);
 
 @immutable

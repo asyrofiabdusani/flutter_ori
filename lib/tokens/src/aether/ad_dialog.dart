@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import '../../dart/dart_color.dart';
 import '../../dart/dart_font.dart';
 
+
 const EdgeInsets _defaultInsetPadding =
     EdgeInsets.symmetric(horizontal: 40.0, vertical: 24.0);
 

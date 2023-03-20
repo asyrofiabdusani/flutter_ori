@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import '../../dart/dart_font.dart';
 import '../../dart/dart_color.dart';
 
+
 // Some design constants
 const double _kChipHeight = 32.0;
 const double _kDeleteIconSize = 18.0;
