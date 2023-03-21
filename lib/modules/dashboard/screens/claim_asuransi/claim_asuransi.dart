@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_data_nasabah.dart';
+import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_dokumen_klaim.dart';
 import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_jenis_asuransi.dart';
 import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_pencarian.dart';
 import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_histori_klaim.dart';
@@ -89,10 +90,11 @@ class ClaimAsuransi extends StatelessWidget {
                               title: "Pengajuan Klaim",
                               content: AccordionPengajuanKlaim()),
                           Accordion(
-                              title: "Dokumen Kalim",
-                              content: AccordionPencarian()),
-                        ], */
-                      // children: const [DashboardContent()],
+                              title: "Dokumen Klaim",
+                              content: AccordionDokumenKlaim()),
+                        ],
+                        //children: [DashboardContent()],
+
 
                       children: [
                         ElevatedButton(
