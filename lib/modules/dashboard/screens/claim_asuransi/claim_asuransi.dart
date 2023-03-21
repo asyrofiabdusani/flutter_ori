@@ -12,6 +12,8 @@ import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar.dart';
 import '../content/content.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_drop.dart';
 
 class ClaimAsuransi extends StatelessWidget {
   const ClaimAsuransi({super.key});
@@ -90,7 +92,42 @@ class ClaimAsuransi extends StatelessWidget {
                               title: "Dokumen Kalim",
                               content: AccordionPencarian()),
                         ], */
-                      children: const [DashboardContent()],
+                      // children: const [DashboardContent()],
+
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return DialogDrop(
+                                    dialogWidth: 596,
+                                    dialogHeight: 496,
+                                    dialogImg:
+                                        'images/60875-confuse-person-1.png',
+                                    dialogImgWidth: 250,
+                                    dialogImgHeight: 250,
+                                    dialogTopText:
+                                        'Apakah anda yakin ingin batalkan pengajuan?',
+                                    dialogBottomText: 'Pilih Alasan pembatalan',
+                                    primaryBtText: 'Ya, Kirim SRH',
+                                    secondaryBtText: 'Kembali',
+                                    primaryBtIsShow: true,
+                                    secondaryBtIsShow: true,
+                                    primaryCallback: () {
+                                      print('send');
+                                    },
+                                    secondaryCallback: () {
+                                      print('back');
+                                    },
+                                  );
+                                });
+                          },
+                          child: Center(
+                            child: Text('Open Dialog'),
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 )
