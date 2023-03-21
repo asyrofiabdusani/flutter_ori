@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_ori/tokens/dart/dart_text.dart';
+import 'package:flutter_ori/widgets/table/paginated_2.dart';
+import 'package:flutter_ori/widgets/table/paginated_3.dart';
 import 'package:flutter_ori/widgets/table/table_1.dart';
 import 'package:flutter_ori/widgets/table/table_2.dart';
 import 'package:flutter_ori/widgets/table/table_3.dart';
+import 'package:flutter_ori/widgets/table/paginated_1.dart';
 
 class ToDoWg extends StatefulWidget {
   @override
@@ -19,7 +22,7 @@ class _ToDoWgState extends State<ToDoWg> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'To Do List',
           style: TextStyle(
               fontSize: adrFont.subtitle2FontSize, fontWeight: FontWeight.bold),
@@ -338,17 +341,17 @@ class _ToDoWgState extends State<ToDoWg> {
         Column(
           children: [
             if (activeMenu == 0) ...[
-              TableFirst(),
+              const PaginatedFirst(),
             ] else if (activeMenu == 1) ...[
-              TableSecond(),
+              const PaginatedSecond(),
             ] else if (activeMenu == 2) ...[
-              TableSecond(),
+              const PaginatedSecond(),
             ] else if (activeMenu == 3) ...[
-              TableThird(),
+              const PaginatedThird(),
             ] else if (activeMenu == 4) ...[
-              TableThird(),
+              const PaginatedThird(),
             ] else if (activeMenu == 5) ...[
-              TableSecond(),
+              const PaginatedSecond(),
             ],
           ],
         )

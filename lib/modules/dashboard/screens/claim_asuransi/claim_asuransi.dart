@@ -58,16 +58,16 @@ class ClaimAsuransi extends StatelessWidget {
             // )
           ),
           Expanded(
-              flex: 3,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  AppBar2(),
-                  Container(
-                    height: MediaQuery.of(context).size.height - 55,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
+            flex: 3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const AppBar2(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 55,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      /* children: [
                           SizedBox(
                             height: 30,
                           ),
@@ -89,14 +89,14 @@ class ClaimAsuransi extends StatelessWidget {
                           Accordion(
                               title: "Dokumen Kalim",
                               content: AccordionPencarian()),
-                        ],
-                        //children: [DashboardContent()],
-
-                      ),
+                        ], */
+                      children: const [DashboardContent()],
                     ),
-                  )
-                ],
-              ),),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );

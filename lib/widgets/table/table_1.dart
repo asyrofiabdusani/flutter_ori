@@ -15,17 +15,17 @@ class TableFirst extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.width,
             child: DataTable(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(8),
                       topRight: Radius.circular(8))),
               headingRowColor:
                   MaterialStateProperty.all<Color>(Colors.transparent),
-              headingTextStyle: TextStyle(color: Colors.white),
+              headingTextStyle: const TextStyle(color: Colors.white),
               columns: const <DataColumn>[
                 DataColumn(
                   label: Expanded(

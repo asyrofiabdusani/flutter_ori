@@ -14,7 +14,7 @@ class DashboardContent extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(32),
           child: Row(
-            children: [
+            children: const [
               Expanded(
                 flex: 1,
                 child: CardContent(
@@ -49,7 +49,7 @@ class DashboardContent extends StatelessWidget {
         //? To Do
         Padding(
           padding: const EdgeInsets.fromLTRB(32, 0, 32, 32),
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Card(
               child: Padding(
