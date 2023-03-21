@@ -1,7 +1,12 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_data_nasabah.dart';
+import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_jenis_asuransi.dart';
 import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_pencarian.dart';
+import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_histori_klaim.dart';
+import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/accord_pengajuan_klaim.dart';
+import 'package:flutter_ori/modules/dashboard/screens/claim_asuransi/component/form/form_data_nasabah.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
@@ -62,12 +67,36 @@ class ClaimAsuransi extends StatelessWidget {
                     height: MediaQuery.of(context).size.height - 55,
                     child: SingleChildScrollView(
                       child: Column(
-                        children: [DashboardContent()],
+                        children: [
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Accordion(
+                              title: "Pencarian",
+                              content: AccordionPencarian()),
+                          Accordion(
+                              title: "Data Nasabah",
+                              content: AccordionDataNasabah()),
+                          Accordion(
+                              title: "Jenis Asuransi",
+                              content: AccordionJenisAsuransi()),
+                          Accordion(
+                              title: "Histori Klaim",
+                              content: AccordionHistoriKlaim()),
+                          Accordion(
+                              title: "Pengajuan Klaim",
+                              content: AccordionPengajuanKlaim()),
+                          Accordion(
+                              title: "Dokumen Kalim",
+                              content: AccordionPencarian()),
+                        ],
+                        //children: [DashboardContent()],
+
                       ),
                     ),
                   )
                 ],
-              )),
+              ),),
         ],
       ),
     );
