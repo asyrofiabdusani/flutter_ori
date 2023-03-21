@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
+import 'package:flutter_ori/widgets/form/form_pick_file.dart';
 
 class FormDokumenKlaim extends StatefulWidget {
   const FormDokumenKlaim({super.key});
@@ -33,12 +34,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "COPY KTP / SIM DEBITUR *",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -60,12 +58,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "COPY KTP / SIM DEBITUR *",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
