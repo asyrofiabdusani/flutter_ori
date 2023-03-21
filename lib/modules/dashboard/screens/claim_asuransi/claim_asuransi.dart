@@ -12,6 +12,7 @@ import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar.dart';
+import '../content/content.dart';
 
 class ClaimAsuransi extends StatelessWidget {
   const ClaimAsuransi({super.key});
@@ -90,11 +91,13 @@ class ClaimAsuransi extends StatelessWidget {
                               title: "Dokumen Klaim",
                               content: AccordionDokumenKlaim()),
                         ],
+                        //children: [DashboardContent()],
+
                       ),
                     ),
                   )
                 ],
-              )),
+              ),),
         ],
       ),
     );

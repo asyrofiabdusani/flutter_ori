@@ -6,6 +6,7 @@ import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'SidebarListTile.dart';
+import 'package:flutter_ori/tokens/dart/dart_text.dart';
 
 class AccordionMenu extends StatefulWidget {
   final String title;
@@ -64,7 +65,7 @@ class _AccordionMenuState extends State<AccordionMenu> {
                 child: Column(children: [
                   SidebarListTile(
                     status: "active",
-                    title: "Input Claim",
+                    title: adrText.menu2_1,
                     icon: "icons/claim.svg",
                     level: 2,
                   ),
@@ -72,7 +73,7 @@ class _AccordionMenuState extends State<AccordionMenu> {
                     height: 10,
                   ),
                   SidebarListTile(
-                    title: "Monitoring Claim",
+                    title: adrText.menu2_2,
                     icon: "icons/monitor.svg",
                     level: 2,
                   ),
