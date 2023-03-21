@@ -7,6 +7,8 @@ import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'sidebar_widget/SidebarListTile.dart';
 import 'sidebar_widget/AccordionMenu.dart';
+import 'sidebar_widget/AccordionMenu.dart';
+import 'package:flutter_ori/tokens/dart/dart_text.dart';
 
 class SideBar extends StatefulWidget {
   const SideBar({super.key});
@@ -30,14 +32,14 @@ class _SideBarState extends State<SideBar> {
               ),
             ),
             SidebarListTile(
-              title: "Dashboard",
+              title: adrText.menu1,
               icon: "icons/Home.svg",
             ),
             SizedBox(
               height: 10,
             ),
             AccordionMenu(
-              title: "Insurance Claim Procces",
+              title: adrText.menu2,
               icon: "icons/insuranceclaim.svg",
             ),
           ],
