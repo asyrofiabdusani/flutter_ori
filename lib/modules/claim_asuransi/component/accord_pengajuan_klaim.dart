@@ -5,16 +5,16 @@ import 'dropdown_pencarian.dart';
 import 'datatable/datatable_pencarian.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/component/form/form_data_nasabah.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/component/datatable/datatable_jenis_asuransi.dart';
+import 'package:flutter_ori/modules/claim_asuransi/component/form/form_pengajuan_klaim.dart';
 
-class AccordionJenisAsuransi extends StatefulWidget {
-  const AccordionJenisAsuransi({Key? key}) : super(key: key);
+class AccordionPengajuanKlaim extends StatefulWidget {
+  const AccordionPengajuanKlaim({Key? key}) : super(key: key);
   @override
-  State<AccordionJenisAsuransi> createState() => _AccordionJenisAsuransiState();
+  State<AccordionPengajuanKlaim> createState() =>
+      _AccordionPengajuanKlaimState();
 }
 
-class _AccordionJenisAsuransiState extends State<AccordionJenisAsuransi> {
+class _AccordionPengajuanKlaimState extends State<AccordionPengajuanKlaim> {
   // Show or hide the content
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _AccordionJenisAsuransiState extends State<AccordionJenisAsuransi> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            child: DataTableJenisAsuransi(),
+            child: FormPengajuanKlaim(),
           ),
           SizedBox(
             height: 5,

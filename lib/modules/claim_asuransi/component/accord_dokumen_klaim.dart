@@ -5,15 +5,15 @@ import 'dropdown_pencarian.dart';
 import 'datatable/datatable_pencarian.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/component/form/form_data_nasabah.dart';
+import 'package:flutter_ori/modules/claim_asuransi/component/form/form_dokumen_klaim.dart';
 
-class AccordionDataNasabah extends StatefulWidget {
-  const AccordionDataNasabah({Key? key}) : super(key: key);
+class AccordionDokumenKlaim extends StatefulWidget {
+  const AccordionDokumenKlaim({Key? key}) : super(key: key);
   @override
-  State<AccordionDataNasabah> createState() => _AccordionDataNasabahState();
+  State<AccordionDokumenKlaim> createState() => _AccordionDokumenKlaimState();
 }
 
-class _AccordionDataNasabahState extends State<AccordionDataNasabah> {
+class _AccordionDokumenKlaimState extends State<AccordionDokumenKlaim> {
   // Show or hide the content
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _AccordionDataNasabahState extends State<AccordionDataNasabah> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            child: FormDataNasabah(),
+            child: FormDokumenKlaim(),
           ),
           SizedBox(
             height: 5,

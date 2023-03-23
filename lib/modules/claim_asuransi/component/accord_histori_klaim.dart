@@ -5,8 +5,8 @@ import 'dropdown_pencarian.dart';
 import 'datatable/datatable_pencarian.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/component/form/form_data_nasabah.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/component/datatable/datatable_histori_klaim.dart';
+import 'package:flutter_ori/modules/claim_asuransi/component/form/form_data_nasabah.dart';
+import 'package:flutter_ori/modules/claim_asuransi/component/datatable/datatable_histori_klaim.dart';
 
 class AccordionHistoriKlaim extends StatefulWidget {
   const AccordionHistoriKlaim({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ori/modules/dashboard/dashboard.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/claim_asuransi.dart';
+import 'package:flutter_ori/modules/dashboard/screens/dashboard.dart';
+import 'package:flutter_ori/modules/claim_asuransi/screens/claim_asuransi.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/sidebar_menu.dart';
 
