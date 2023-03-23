@@ -29,36 +29,10 @@ class ClaimAsuransi extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              child: SideBar(),
+              child: SideBar(
+                route: '',
+              ),
             ),
-
-            //Container(
-            //   color: Color.fromRGBO(255, 235, 116, 1.0),
-            //   child: Column(
-            //     children: [
-            //       Stack(
-            //         alignment: Alignment.center,
-            //         children: [
-            //           Padding(
-            //             padding: const EdgeInsets.only(top: 32),
-            //             child: Image.asset('logo-ADMF.png'),
-            //           )
-            //         ],
-            //       ),
-            //       Padding(
-            //         padding: const EdgeInsets.only(top: 56),
-            //         child: SizedBox(
-            //           height: 50,
-            //           width: 250,
-            //           child: ContactButton(
-            //               buttonText: 'Dashboard',
-            //               icon: Icon(Icons.house, color: Colors.white),
-            //               onPressed: () => print('hellow World')),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // )
           ),
           Expanded(
             flex: 3,
