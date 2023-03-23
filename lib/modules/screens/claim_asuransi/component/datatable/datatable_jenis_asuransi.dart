@@ -5,6 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_size.dart';
+import 'package:flutter_ori/widgets/table/styled_paginated_table.dart';
 
 class DataTableJenisAsuransi extends StatefulWidget {
   const DataTableJenisAsuransi({super.key});
@@ -14,75 +15,59 @@ class DataTableJenisAsuransi extends StatefulWidget {
 }
 
 class _DataTableJenisAsuransiState extends State<DataTableJenisAsuransi> {
-  final List<Map> _data = [
-    {
-      'JenisAsuransi': "36 TOTAL LOSS ONLY (TLO)",
-      'PeriodeAsuransi': 'Ahmad Sobari',
-      'Perusahaan': 'Disetujui',
-    },
-    {
-      'JenisAsuransi': "KECELAKAAN DIRI (PA)",
-      'PeriodeAsuransi': 'Caca Marica',
-      'Perusahaan': 'Disetujui',
-    },
-  ];
-
-  List<bool> _selectedTable = [];
-  @override
-  void initState() {
-    super.initState();
-    _selectedTable = List<bool>.generate(_data.length, (int index) => false);
-  }
-
   @override
   Widget build(BuildContext context) {
     return createDataTable();
   }
 
-  AdDataTable createDataTable() {
-    return AdDataTable(
-      columns: _demoCreateColumns(),
-      rows: _demoCreateRows(),
-      headingRowColor: MaterialStateProperty.all<Color>(Color(0xFF101828)),
-      headingRowHeight: 75,
-      headingTextStyle: TextStyle(color: adrColor.textWhite),
-      showCheckboxColumn: false,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(adrSize.radiusMedium),
-        border:
-            Border.all(color: Colors.grey, style: BorderStyle.solid, width: 1),
-      ),
-      // decoration: BoxDecoration(
-      //   borderRadius: BorderRadius.circular(adrSize.radiusMedium),
-      //   // border: Border.all(color: Colors.grey),
-      // ),
-    );
+  StyledPaginatedTable createDataTable() {
+    return StyledPaginatedTable(
+        columns: _CreateColumns(), rows: TableRow(), rowPerPage: 5);
   }
 
-  List<AdDataColumn> _demoCreateColumns() {
+  List<DataColumn> _CreateColumns() {
     return [
-      const AdDataColumn(label: Text('Jenis Asuransi')),
-      const AdDataColumn(label: Text('Periode Asuransi')),
-      const AdDataColumn(label: Text('Perusahaan Asuransi')),
-      const AdDataColumn(label: Text('Aksi')),
+      const DataColumn(
+          label: Text(
+        ' Jenis Asuransi',
+        style: TextStyle(color: adrColor.textWhite),
+      )),
+      const DataColumn(
+          label: Text(
+        'Periode Asuransi',
+        style: TextStyle(color: adrColor.textWhite),
+      )),
+      const DataColumn(
+          label: Text(
+        'Perusahaan Asuransi',
+        style: TextStyle(color: adrColor.textWhite),
+      )),
+      const DataColumn(
+          label: Text(
+        'Update',
+        style: TextStyle(color: adrColor.textWhite),
+      )),
     ];
   }
+}
 
-  List<AdDataRow> _demoCreateRows() {
-    return _data
-        .mapIndexed((index, data) => AdDataRow(
-                cells: [
-                  AdDataCell(Text(data['JenisAsuransi'])),
-                  AdDataCell(Text(data['PeriodeAsuransi'])),
-                  AdDataCell(Text(data['Perusahaan'])),
-                  AdDataCell(Text("Upgrade")),
-                ],
-                selected: _selectedTable[index],
-                onSelectChanged: (bool? selected) {
-                  setState(() {
-                    _selectedTable[index] = selected!;
-                  });
-                }))
-        .toList();
+class TableRow extends DataTableSource {
+  @override
+  DataRow? getRow(int index) {
+    return DataRow.byIndex(index: index, cells: [
+      DataCell(Text("Cell $index")),
+      DataCell(Text("Cell $index")),
+      DataCell(Text("Cell $index")),
+      DataCell(Text("Update")),
+    ]);
   }
+
+  @override
+  bool get isRowCountApproximate => true;
+
+  @override
+  int get rowCount => 50;
+
+  @override
+  int get selectedRowCount => 0;
 }
