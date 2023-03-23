@@ -68,7 +68,9 @@ class _MenuListState extends State<MenuList> {
         const SizedBox(
           height: 10,
         ),
-        _showContent || lastPath == 'claim_asuransi' || lastPath == ''
+        _showContent ||
+                lastPath == 'claim_asuransi' ||
+                lastPath == 'monitoring_claim'
             ? Container(
                 child: Align(
                   child: Column(
@@ -86,11 +88,13 @@ class _MenuListState extends State<MenuList> {
                         height: 10,
                       ),
                       SidebarListTile(
-                        // status: widget.route == '' ? 'active' : 'nonactive',
+                        status: lastPath == 'monitoring_claim'
+                            ? 'active'
+                            : 'nonactive',
                         title: adrText.menu2_2,
                         icon: "icons/monitor.svg",
                         level: 2,
-                        route: '',
+                        route: 'monitoring_claim',
                       ),
                     ],
                   ),

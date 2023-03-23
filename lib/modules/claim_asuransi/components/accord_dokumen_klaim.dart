@@ -5,7 +5,7 @@ import 'dropdown_pencarian.dart';
 import 'datatable/datatable_pencarian.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter_ori/modules/claim_asuransi/component/form/form_dokumen_klaim.dart';
+import 'package:flutter_ori/modules/claim_asuransi/components/form/form_dokumen_klaim.dart';
 
 class AccordionDokumenKlaim extends StatefulWidget {
   const AccordionDokumenKlaim({Key? key}) : super(key: key);
