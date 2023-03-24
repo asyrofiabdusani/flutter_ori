@@ -24,4 +24,7 @@ class adrText {
   static const main_dashboard_to_do_list5 = 'Hasil Klaim';
   static const main_dashboard_to_do_list6 = 'Overdue';
   static const main_dashboard_cari_data = 'Cari data';
+
+  static const button_reset = 'Reset';
+  static const button_cari = 'Cari';
 }

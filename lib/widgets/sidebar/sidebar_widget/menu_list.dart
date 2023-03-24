@@ -26,10 +26,12 @@ class _MenuListState extends State<MenuList> {
     return Column(
       children: [
         SidebarListTile(
-          status: lastPath == 'dashboard' ? 'active' : 'nonactive',
+          status: lastPath == 'dashboard' || lastPath == ''
+              ? 'active'
+              : 'nonactive',
           title: adrText.menu1,
           icon: "icons/Home.svg",
-          route: 'dashboard',
+          route: '/',
         ),
         const SizedBox(
           height: 10,
@@ -54,7 +56,6 @@ class _MenuListState extends State<MenuList> {
             ),
             leading: SvgPicture.asset(
               'icons/insuranceclaim.svg',
-              color: adrColor.textSidebar,
               height: 16,
             ),
             trailing: Icon(
@@ -82,7 +83,7 @@ class _MenuListState extends State<MenuList> {
                         title: adrText.menu2_1,
                         icon: "icons/claim.svg",
                         level: 2,
-                        route: 'claim_asuransi',
+                        route: '/claim_asuransi',
                       ),
                       const SizedBox(
                         height: 10,
@@ -94,7 +95,7 @@ class _MenuListState extends State<MenuList> {
                         title: adrText.menu2_2,
                         icon: "icons/monitor.svg",
                         level: 2,
-                        route: 'monitoring_claim',
+                        route: '/monitoring_claim',
                       ),
                     ],
                   ),
