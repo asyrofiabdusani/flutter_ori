@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ori/modules/screens/claim_asuransi/claim_asuransi.dart';
+import 'package:flutter_ori/modules/claim_asuransi/screens/claim_asuransi.dart';
 
 void main() {
   runApp(const MyApp());
