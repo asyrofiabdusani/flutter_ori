@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
+import 'package:flutter_ori/widgets/form/form_date_picker.dart';
 
 class FormPengajuanKlaim extends StatefulWidget {
   const FormPengajuanKlaim({super.key});
@@ -42,13 +43,8 @@ class _FormPengajuanKlaimState extends State<FormPengajuanKlaim> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.date_range_outlined),
-                      hintText: "Tanggal Pengajuan",
-                      labelText: "Tanggal Pengajuan",
-                    ),
-                  ),
+                  FormDatePicker(
+                      hint: "Tanggal Pengajuan", label: "Tanggal Pengajuan"),
                   SizedBox(
                     height: 16,
                   ),
@@ -219,13 +215,8 @@ class _FormPengajuanKlaimState extends State<FormPengajuanKlaim> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.date_range_outlined),
-                      hintText: "Select Date",
-                      labelText: "Tanggal Kejadian",
-                    ),
-                  ),
+                  FormDatePicker(
+                      hint: "Tanggal Kejadian", label: "Tanggal Kejadian"),
                   SizedBox(
                     height: 16,
                   ),
