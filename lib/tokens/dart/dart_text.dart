@@ -5,8 +5,6 @@
 // Do not edit directly
 // Generated on Wed, 04 Jan 2023 02:56:52 GMT
 
-import 'dart:ui';
-
 class adrText {
   adrText._();
   static const menu1 = 'Dashboard';
