@@ -14,6 +14,7 @@ class SideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      shadowColor: Colors.transparent,
       backgroundColor: adrColor.backgroundPrimaryContainer,
       child: SingleChildScrollView(
         child: Column(
