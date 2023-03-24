@@ -35,68 +35,72 @@ class ClaimAsuransi extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const AppBar2(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height - 55,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: const [
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Accordion(
-                            title: "Pencarian", content: AccordionPencarian()),
-                        Accordion(
-                            title: "Data Nasabah",
-                            content: AccordionDataNasabah()),
-                        Accordion(
-                            title: "Jenis Asuransi",
-                            content: AccordionJenisAsuransi()),
-                        Accordion(
-                            title: "Histori Klaim",
-                            content: AccordionHistoriKlaim()),
-                        Accordion(
-                            title: "Pengajuan Klaim",
-                            content: AccordionPengajuanKlaim()),
-                        Accordion(
-                            title: "Dokumen Klaim",
-                            content: AccordionDokumenKlaim()),
-                      ],
-                      //children: [DashboardContent()],
-
-                      /* children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            showDialog<String>(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return DialogDrop(
-                                    dialogWidth: 596,
-                                    dialogHeight: 496,
-                                    dialogImg:
-                                        'images/60875-confuse-person-1.png',
-                                    dialogImgWidth: 250,
-                                    dialogImgHeight: 250,
-                                    dialogTopText:
-                                        'Apakah anda yakin ingin batalkan pengajuan?',
-                                    dialogBottomText: 'Pilih Alasan pembatalan',
-                                    primaryBtText: 'Ya, Kirim SRH',
-                                    secondaryBtText: 'Kembali',
-                                    primaryBtIsShow: true,
-                                    secondaryBtIsShow: true,
-                                    primaryCallback: () {
-                                      print('send');
-                                    },
-                                    secondaryCallback: () {
-                                      print('back');
-                                    },
-                                  );
-                                });
-                          },
-                          child: Center(
-                            child: Text('Open Dialog'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 32.0, right: 32.0),
+                  child: SizedBox(
+                    height: MediaQuery.of(context).size.height - 55,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: const [
+                          SizedBox(
+                            height: 30,
                           ),
-                        )
-                      ], */
+                          Accordion(
+                              title: "Pencarian",
+                              content: AccordionPencarian()),
+                          Accordion(
+                              title: "Data Nasabah",
+                              content: AccordionDataNasabah()),
+                          Accordion(
+                              title: "Jenis Asuransi",
+                              content: AccordionJenisAsuransi()),
+                          Accordion(
+                              title: "Histori Klaim",
+                              content: AccordionHistoriKlaim()),
+                          Accordion(
+                              title: "Pengajuan Klaim",
+                              content: AccordionPengajuanKlaim()),
+                          Accordion(
+                              title: "Dokumen Klaim",
+                              content: AccordionDokumenKlaim()),
+                        ],
+                        //children: [DashboardContent()],
+
+                        /* children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return DialogDrop(
+                                      dialogWidth: 596,
+                                      dialogHeight: 496,
+                                      dialogImg:
+                                          'images/60875-confuse-person-1.png',
+                                      dialogImgWidth: 250,
+                                      dialogImgHeight: 250,
+                                      dialogTopText:
+                                          'Apakah anda yakin ingin batalkan pengajuan?',
+                                      dialogBottomText: 'Pilih Alasan pembatalan',
+                                      primaryBtText: 'Ya, Kirim SRH',
+                                      secondaryBtText: 'Kembali',
+                                      primaryBtIsShow: true,
+                                      secondaryBtIsShow: true,
+                                      primaryCallback: () {
+                                        print('send');
+                                      },
+                                      secondaryCallback: () {
+                                        print('back');
+                                      },
+                                    );
+                                  });
+                            },
+                            child: Center(
+                              child: Text('Open Dialog'),
+                            ),
+                          )
+                        ], */
+                      ),
                     ),
                   ),
                 )

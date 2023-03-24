@@ -20,6 +20,9 @@ class _AccordionState extends State<Accordion> {
   Widget build(BuildContext context) {
     return Container(
       child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(adrSize.radiusSmall),
+        ),
         margin: const EdgeInsets.all(10),
         child: Column(children: [
           // The title
