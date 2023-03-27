@@ -7,13 +7,11 @@ import 'package:flutter_ori/modules/claim_asuransi/components/accord_jenis_asura
 import 'package:flutter_ori/modules/claim_asuransi/components/accord_pencarian.dart';
 import 'package:flutter_ori/modules/claim_asuransi/components/accord_histori_klaim.dart';
 import 'package:flutter_ori/modules/claim_asuransi/components/accord_pengajuan_klaim.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/form/form_data_nasabah.dart';
+import 'package:flutter_ori/tokens/aether.dart';
+import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
-import 'package:flutter_ori/widgets/appbar/app_bar.dart';
-import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
-import 'package:flutter_ori/widgets/dialog/dialog_drop.dart';
 
 class ClaimAsuransi extends StatelessWidget {
   const ClaimAsuransi({super.key});
@@ -39,34 +37,57 @@ class ClaimAsuransi extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const AppBar2(),
-                Padding(
-                  padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height - 55,
-                    child: SingleChildScrollView(
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 55,
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                       child: Column(
-                        children: const [
-                          SizedBox(
+                        children: [
+                          const SizedBox(
                             height: 30,
                           ),
-                          Accordion(
+                          const Accordion(
                               title: "Pencarian",
                               content: AccordionPencarian()),
-                          Accordion(
+                          const Accordion(
                               title: "Data Nasabah",
                               content: AccordionDataNasabah()),
-                          Accordion(
+                          const Accordion(
                               title: "Jenis Asuransi",
                               content: AccordionJenisAsuransi()),
-                          Accordion(
+                          const Accordion(
                               title: "Histori Klaim",
                               content: AccordionHistoriKlaim()),
-                          Accordion(
+                          const Accordion(
                               title: "Pengajuan Klaim",
                               content: AccordionPengajuanKlaim()),
-                          Accordion(
+                          const Accordion(
                               title: "Dokumen Klaim",
                               content: AccordionDokumenKlaim()),
+                          Container(
+                            height: 104,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(adrSize.radiusSmall),
+                              ),
+                              margin: const EdgeInsets.all(10),
+                              child: Row(
+                                children: [
+                                  AdButtonText(
+                                    text: 'Batalkan Pengajuan',
+                                    danger: true,
+                                    onPressed: () {},
+                                  ),
+                                  AdButtonPrimary(
+                                    text: ('Verifikasi Hasil'),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                         //children: [DashboardContent()],
 

@@ -59,7 +59,7 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
               children: [
                 Expanded(
                   child: FormFilePicker(
-                    label: "COPY KTP / SIM DEBITUR *",
+                    label: "FORM PELAPORAN KLAIM *",
                     hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
@@ -101,12 +101,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "FORM PELAPORAN KERUGIAN KLAIM",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -128,12 +125,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "FORM ABANDONMENT",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -155,12 +149,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "LAPORAN POLISI / STPL",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -182,12 +173,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "STNK",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -209,12 +197,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "KUNCI KONTAK",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -236,12 +221,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "COPY SIM PENGEMUDI",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -263,12 +245,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "ESTIMASI KERUSAKAN DARI BENGKEL",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -290,12 +269,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "LAPORAN POLISI / STPL",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -339,12 +315,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "BUKU KIR (KHUSUS MOBIL NIAGA)",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -366,12 +339,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "COPY KTP PELAPOR",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -393,12 +363,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "SURAT KUASA DARI DEBITUR KE PELAPOR",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -420,12 +387,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "SURAT KETERANGAN HUBUNGAN PELAPOR DENGAN DEBITUR",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
@@ -447,12 +411,9 @@ class _FormDokumenKlaimState extends State<FormDokumenKlaim> {
             Row(
               children: [
                 Expanded(
-                  child: AdTextFormField(
-                    decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.cloud_upload_outlined),
-                      hintText: "File JPG, PNG, PDF, Docx",
-                      labelText: "COPY KTP / SIM DEBITUR *",
-                    ),
+                  child: FormFilePicker(
+                    label: "SURAT KETERANGAN DEALER MENGENAI BPKB",
+                    hint: "File JPG, PNG, PDF, Docx",
                   ),
                 ),
                 SizedBox(
