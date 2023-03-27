@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
+import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_size.dart';
 
 class AppBar2 extends StatelessWidget {
@@ -98,11 +99,18 @@ class AppBar2 extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 16, right: 36),
-                          child: IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.keyboard_arrow_down,
-                                  color: Colors.blueAccent)),
-                        ),
+                          child: PopupMenuButton(
+                            icon: Icon(Icons.keyboard_arrow_down,
+                                color: adrColor.textLink),
+                            itemBuilder: (BuildContext context) =>
+                                <PopupMenuEntry>[
+                              const PopupMenuItem(
+                                // value: SampleItem.itemOne,
+                                child: Text('Logout'),
+                              ),
+                            ],
+                          ),
+                        )
                       ]),
                     ),
                   )

@@ -37,7 +37,7 @@ class TableRowFirst extends DataTableSource {
       DataCell(Text("Cell $index")),
       DataCell(Text("Cell $index")),
       DataCell(Text("Cell $index")),
-      const DataCell(Text("Pilih")),
+      DataCell(TextButton(onPressed: () {}, child: Text('Lihat Detail'))),
     ]);
   }
 

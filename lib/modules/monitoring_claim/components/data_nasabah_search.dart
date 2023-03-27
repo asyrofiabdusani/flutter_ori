@@ -7,6 +7,31 @@ import 'package:flutter_ori/widgets/dialog/dialog_text_area.dart';
 import '../../../tokens/aether.dart';
 import 'package:intl/intl.dart';
 
+final List<String> dropdownArea = [
+  'Area 1',
+  'Area 2',
+];
+final List<String> dropdownCabang = [
+  'Cabang 1',
+  'Cabang 2',
+];
+final List<String> dropdownPkStruktur = [
+  'Drop Down 1',
+  'Drop Down 2',
+];
+final List<String> dropdownPerusahaan = [
+  'Perusahaan 1',
+  'Perusahaan 2',
+];
+final List<String> dropdownGroupKlaim = [
+  'Group Klaim 1',
+  'Group Klaim 2',
+];
+final List<String> dropdownStatusKlaim = [
+  'Status Klaim 1',
+  'Status Klaim 2',
+];
+
 class DataNasabahSearch extends StatefulWidget {
   const DataNasabahSearch({super.key});
 
@@ -16,16 +41,15 @@ class DataNasabahSearch extends StatefulWidget {
 
 class _DataNasabahSearchState extends State<DataNasabahSearch> {
   String date = '';
+  String selectedArea = '';
+  String selectedCabang = '';
+  String selectedPkStruktur = '';
+  String selectedPerusahaan = '';
+  String selectedGroupKlaim = '';
+  String selectedStatusKlaim = '';
+
   @override
   Widget build(BuildContext context) {
-    String _selectedItem = 'Item 1';
-    final List<String> _dropdownItems = [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4',
-      'Item 5',
-    ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -44,7 +68,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                   Expanded(
                     child: AdDropdownButtonFormField(
                       hint: const Text('Area'),
-                      items: _dropdownItems.map((String item) {
+                      items: dropdownArea.map((String item) {
                         return DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -52,7 +76,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       }).toList(),
                       onChanged: (String? selectedItem) {
                         setState(() {
-                          _selectedItem = selectedItem!;
+                          selectedArea = selectedItem!;
                         });
                       },
                     ),
@@ -63,7 +87,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                   Expanded(
                     child: AdDropdownButtonFormField(
                       hint: const Text('Cabang'),
-                      items: _dropdownItems.map((String item) {
+                      items: dropdownCabang.map((String item) {
                         return DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -71,7 +95,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       }).toList(),
                       onChanged: (String? selectedItem) {
                         setState(() {
-                          _selectedItem = selectedItem!;
+                          selectedCabang = selectedItem!;
                         });
                       },
                     ),
@@ -96,7 +120,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                   Expanded(
                     child: AdDropdownButtonFormField(
                       hint: const Text('PK Restructure'),
-                      items: _dropdownItems.map((String item) {
+                      items: dropdownPkStruktur.map((String item) {
                         return DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -104,7 +128,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       }).toList(),
                       onChanged: (String? selectedItem) {
                         setState(() {
-                          _selectedItem = selectedItem!;
+                          selectedPkStruktur = selectedItem!;
                         });
                       },
                     ),
@@ -115,7 +139,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                   Expanded(
                     child: AdDropdownButtonFormField(
                       hint: const Text('Perusahaan Asuransi'),
-                      items: _dropdownItems.map((String item) {
+                      items: dropdownPerusahaan.map((String item) {
                         return DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -123,7 +147,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       }).toList(),
                       onChanged: (String? selectedItem) {
                         setState(() {
-                          _selectedItem = selectedItem!;
+                          selectedPerusahaan = selectedItem!;
                         });
                       },
                     ),
@@ -187,7 +211,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                   Expanded(
                     child: AdDropdownButtonFormField(
                       hint: const Text('Group Klaim'),
-                      items: _dropdownItems.map((String item) {
+                      items: dropdownGroupKlaim.map((String item) {
                         return DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -195,7 +219,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       }).toList(),
                       onChanged: (String? selectedItem) {
                         setState(() {
-                          _selectedItem = selectedItem!;
+                          selectedGroupKlaim = selectedItem!;
                         });
                       },
                     ),
@@ -206,7 +230,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                   Expanded(
                     child: AdDropdownButtonFormField(
                       hint: const Text('Status Klaim'),
-                      items: _dropdownItems.map((String item) {
+                      items: dropdownStatusKlaim.map((String item) {
                         return DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -214,7 +238,7 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       }).toList(),
                       onChanged: (String? selectedItem) {
                         setState(() {
-                          _selectedItem = selectedItem!;
+                          selectedStatusKlaim = selectedItem!;
                         });
                       },
                     ),
@@ -237,7 +261,13 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
               Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print(selectedArea);
+                    setState(() {
+                      selectedArea = '';
+                    });
+                    print(selectedArea);
+                  },
                   style: ButtonStyle(
                     padding: const MaterialStatePropertyAll(
                         EdgeInsets.fromLTRB(24, 8, 24, 8)),
@@ -271,40 +301,42 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
                       context: context,
                       builder: (context) {
                         return DialogChecklist(
-                            dialogWidth: 423,
-                            dialogHeight: 256,
-                            dialogTitle:
-                                'Pastikan Anda sudah melakukan pengecekan',
-                            dialogFirstChecklist: 'Hasil Klaim',
-                            dialogSecondChecklist: 'Surat Keputusan Klaim',
-                            dialogThirdChecklist: 'Nilai Pencairan',
-                            primaryBtText: 'Approve',
-                            secondaryBtText: 'Reject',
-                            primaryBtIsShow: true,
-                            secondaryBtIsShow: true,
-                            primaryCallback: () {},
-                            secondaryCallback: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return DialogTextArea(
-                                      dialogWidth: 522,
-                                      dialogHeight: 280,
-                                      dialogTitle: 'Keterangan Reject',
-                                      dialogLabel: 'Alasan reject',
-                                      dialogTextHint: 'Isi Keterangan',
-                                      dialogMaxLines: 7,
-                                      primaryBtText: 'Submit Catatan',
-                                      secondaryBtText: 'Kembali',
-                                      primaryBtIsShow: true,
-                                      secondaryBtIsShow: true,
-                                      primaryCallback: () {},
-                                      secondaryCallback: () {
-                                        Navigator.of(context).pop();
-                                      });
-                                },
-                              );
-                            });
+                          dialogWidth: 423,
+                          dialogHeight: 256,
+                          dialogTitle:
+                              'Pastikan Anda sudah melakukan pengecekan',
+                          dialogFirstChecklist: 'Hasil Klaim',
+                          dialogSecondChecklist: 'Surat Keputusan Klaim',
+                          dialogThirdChecklist: 'Nilai Pencairan',
+                          primaryBtText: 'Approve',
+                          secondaryBtText: 'Reject',
+                          primaryBtIsShow: true,
+                          secondaryBtIsShow: true,
+                          primaryCallback: () {},
+                          secondaryCallback: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return DialogTextArea(
+                                  dialogWidth: 522,
+                                  dialogHeight: 280,
+                                  dialogTitle: 'Keterangan Reject',
+                                  dialogLabel: 'Alasan reject',
+                                  dialogTextHint: 'Isi Keterangan',
+                                  dialogMaxLines: 7,
+                                  primaryBtText: 'Submit Catatan',
+                                  secondaryBtText: 'Kembali',
+                                  primaryBtIsShow: true,
+                                  secondaryBtIsShow: true,
+                                  primaryCallback: () {},
+                                  secondaryCallback: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                );
+                              },
+                            );
+                          },
+                        );
                       },
                     );
                   },
