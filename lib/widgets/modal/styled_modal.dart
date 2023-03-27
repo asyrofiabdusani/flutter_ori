@@ -34,7 +34,7 @@ class _StyledModalState extends State<StyledModal> {
             height: 52,
             child: ListTile(
               title: Padding(
-                padding: const EdgeInsets.only(left: 30.0, top: 10, bottom: 10),
+                padding: const EdgeInsets.only(left: 15.0, top: 10, bottom: 10),
                 child: Text(
                   widget.title,
                   style: TextStyle(
