@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_ori/tokens/dart/dart_text.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_checklist.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_text_area.dart';
 import '../../../tokens/aether.dart';
 import 'package:intl/intl.dart';
 
@@ -264,7 +266,48 @@ class _DataNasabahSearchState extends State<DataNasabahSearch> {
               Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogChecklist(
+                            dialogWidth: 423,
+                            dialogHeight: 256,
+                            dialogTitle:
+                                'Pastikan Anda sudah melakukan pengecekan',
+                            dialogFirstChecklist: 'Hasil Klaim',
+                            dialogSecondChecklist: 'Surat Keputusan Klaim',
+                            dialogThirdChecklist: 'Nilai Pencairan',
+                            primaryBtText: 'Approve',
+                            secondaryBtText: 'Reject',
+                            primaryBtIsShow: true,
+                            secondaryBtIsShow: true,
+                            primaryCallback: () {},
+                            secondaryCallback: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return DialogTextArea(
+                                      dialogWidth: 522,
+                                      dialogHeight: 280,
+                                      dialogTitle: 'Keterangan Reject',
+                                      dialogLabel: 'Alasan reject',
+                                      dialogTextHint: 'Isi Keterangan',
+                                      dialogMaxLines: 7,
+                                      primaryBtText: 'Submit Catatan',
+                                      secondaryBtText: 'Kembali',
+                                      primaryBtIsShow: true,
+                                      secondaryBtIsShow: true,
+                                      primaryCallback: () {},
+                                      secondaryCallback: () {
+                                        Navigator.of(context).pop();
+                                      });
+                                },
+                              );
+                            });
+                      },
+                    );
+                  },
                   style: ButtonStyle(
                     padding: const MaterialStatePropertyAll(
                         EdgeInsets.fromLTRB(24, 8, 24, 8)),
