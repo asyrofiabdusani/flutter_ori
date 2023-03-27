@@ -13,8 +13,8 @@ import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
 
-class ClaimAsuransi extends StatelessWidget {
-  const ClaimAsuransi({super.key});
+class MonitoringClaimDraft extends StatelessWidget {
+  const MonitoringClaimDraft({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class ClaimAsuransi extends StatelessWidget {
                                   SizedBox(
                                     height: 40,
                                     child: AdButtonSecondary(
-                                      text: 'Simpan Ke Draft',
+                                      text: 'Perbarui Draft',
                                       onPressed: () {},
                                     ),
                                   ),
