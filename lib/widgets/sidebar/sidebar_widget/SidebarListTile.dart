@@ -24,8 +24,6 @@ class SidebarListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SidebarMenuCubit myMenu = BlocProvider.of(context);
-
     return GestureDetector(
       child: Container(
         decoration: BoxDecoration(
@@ -36,7 +34,7 @@ class SidebarListTile extends StatelessWidget {
         width: 300,
         child: ListTile(
           onTap: () {
-            Navigator.pushNamed(context, '/${route}');
+            Navigator.pushNamed(context, '${route}');
           },
           contentPadding:
               EdgeInsets.only(left: level > 1 ? (level * 5) + 20 : 20),
