@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_ori/tokens/dart/dart_text.dart';
-import 'package:flutter_ori/widgets/dialog/dialog_calculate.dart';
-import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
-import 'package:flutter_ori/widgets/table/paginated_3.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_checklist.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_text_area.dart';
 import '../../../tokens/aether.dart';
 import 'package:intl/intl.dart';
 
-class DataNasabah extends StatefulWidget {
-  const DataNasabah({super.key});
+class DataNasabahSearch extends StatefulWidget {
+  const DataNasabahSearch({super.key});
 
   @override
-  State<DataNasabah> createState() => _DataNasabahState();
+  State<DataNasabahSearch> createState() => _DataNasabahSearchState();
 }
 
-class _DataNasabahState extends State<DataNasabah> {
+class _DataNasabahSearchState extends State<DataNasabahSearch> {
   String date = '';
   @override
   Widget build(BuildContext context) {
@@ -140,6 +139,23 @@ class _DataNasabahState extends State<DataNasabah> {
                           initialDate: DateTime.now(),
                           firstDate: DateTime(1950),
                           lastDate: DateTime(2100),
+                          builder: (context, child) {
+                            return Theme(
+                              data: Theme.of(context).copyWith(
+                                colorScheme: const ColorScheme.light(
+                                    primary:
+                                        adrColor.backgroundPrimaryContainer,
+                                    onPrimary: adrColor.textNormal),
+                                textButtonTheme: TextButtonThemeData(
+                                  style: TextButton.styleFrom(
+                                      primary: adrColor
+                                          .textNormal // button text color
+                                      ),
+                                ),
+                              ),
+                              child: child!,
+                            );
+                          },
                         );
                         if (pickedDate != null) {
                           String formattedDate =
@@ -151,12 +167,12 @@ class _DataNasabahState extends State<DataNasabah> {
                       },
                       readOnly: true,
                       decoration: InputDecoration(
-                        hintText: date == '' ? 'Tanggal Pengajuan' : '$date',
+                        hintText: date == '' ? 'Tanggal Pengajuan' : date,
                         hintStyle: TextStyle(
                             color: date == ''
-                                ? Color(0xff666666)
+                                ? const Color(0xff666666)
                                 : adrColor.textNormal),
-                        suffixIcon: Icon(Icons.date_range),
+                        suffixIcon: const Icon(Icons.date_range),
                       ),
                     ),
                   ),
@@ -221,12 +237,7 @@ class _DataNasabahState extends State<DataNasabah> {
               Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: FilledButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) => DialogCalculate());
-                    print('object');
-                  },
+                  onPressed: () {},
                   style: ButtonStyle(
                     padding: const MaterialStatePropertyAll(
                         EdgeInsets.fromLTRB(24, 8, 24, 8)),
@@ -255,7 +266,48 @@ class _DataNasabahState extends State<DataNasabah> {
               Padding(
                 padding: const EdgeInsets.only(right: 8),
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return DialogChecklist(
+                            dialogWidth: 423,
+                            dialogHeight: 256,
+                            dialogTitle:
+                                'Pastikan Anda sudah melakukan pengecekan',
+                            dialogFirstChecklist: 'Hasil Klaim',
+                            dialogSecondChecklist: 'Surat Keputusan Klaim',
+                            dialogThirdChecklist: 'Nilai Pencairan',
+                            primaryBtText: 'Approve',
+                            secondaryBtText: 'Reject',
+                            primaryBtIsShow: true,
+                            secondaryBtIsShow: true,
+                            primaryCallback: () {},
+                            secondaryCallback: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return DialogTextArea(
+                                      dialogWidth: 522,
+                                      dialogHeight: 280,
+                                      dialogTitle: 'Keterangan Reject',
+                                      dialogLabel: 'Alasan reject',
+                                      dialogTextHint: 'Isi Keterangan',
+                                      dialogMaxLines: 7,
+                                      primaryBtText: 'Submit Catatan',
+                                      secondaryBtText: 'Kembali',
+                                      primaryBtIsShow: true,
+                                      secondaryBtIsShow: true,
+                                      primaryCallback: () {},
+                                      secondaryCallback: () {
+                                        Navigator.of(context).pop();
+                                      });
+                                },
+                              );
+                            });
+                      },
+                    );
+                  },
                   style: ButtonStyle(
                     padding: const MaterialStatePropertyAll(
                         EdgeInsets.fromLTRB(24, 8, 24, 8)),
@@ -283,7 +335,6 @@ class _DataNasabahState extends State<DataNasabah> {
             ],
           ),
         ),
-        const PaginatedThird(),
       ],
     );
   }

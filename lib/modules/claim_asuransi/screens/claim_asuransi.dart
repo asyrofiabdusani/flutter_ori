@@ -12,6 +12,8 @@ import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_drop.dart';
 
 class ClaimAsuransi extends StatelessWidget {
   const ClaimAsuransi({super.key});
@@ -81,7 +83,62 @@ class ClaimAsuransi extends StatelessWidget {
                                   AdButtonText(
                                     text: 'Batalkan Pengajuan',
                                     danger: true,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return DialogDrop(
+                                              dialogWidth: 596,
+                                              dialogHeight: 514,
+                                              dialogImg:
+                                                  'assets/images/5527-alert-notification-character 1.png',
+                                              dialogImgWidth: 250,
+                                              dialogImgHeight: 250,
+                                              dialogTopText:
+                                                  'Apakah anda yakin ingin batalkan pengajuan?',
+                                              dialogBottomText:
+                                                  'Pilih Alasan pembatalan',
+                                              primaryBtText: 'Ya, Ubah Data',
+                                              secondaryBtText: 'Kembali',
+                                              primaryBtIsShow: true,
+                                              secondaryBtIsShow: true,
+                                              primaryCallback: () {
+                                                Navigator.of(context,
+                                                        rootNavigator: true)
+                                                    .pop();
+                                                showDialog(
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return DialogRegular(
+                                                        dialogWidth: 596,
+                                                        dialogHeight: 496,
+                                                        dialogImg:
+                                                            'assets/images/59945-success-confetti 1.png',
+                                                        dialogImgWidth: 250,
+                                                        dialogImgHeight: 250,
+                                                        dialogTopText:
+                                                            'Berhasil!!',
+                                                        dialogBottomText:
+                                                            'Data berhasil dikirim',
+                                                        primaryBtText: '',
+                                                        secondaryBtText:
+                                                            'Kembali',
+                                                        primaryBtIsShow: false,
+                                                        secondaryBtIsShow: true,
+                                                        primaryCallback: () {},
+                                                        secondaryCallback: () {
+                                                          Navigator.of(context)
+                                                              .pop();
+                                                        });
+                                                  },
+                                                );
+                                              },
+                                              secondaryCallback: () {
+                                                Navigator.of(context).pop();
+                                              });
+                                        },
+                                      );
+                                    },
                                   ),
                                   const SizedBox(
                                     width: 18,
@@ -98,7 +155,63 @@ class ClaimAsuransi extends StatelessWidget {
                                   ),
                                   AdButtonPrimary(
                                     text: ('Kirim Ke SRH'),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return DialogRegular(
+                                            dialogWidth: 596,
+                                            dialogHeight: 496,
+                                            dialogImg:
+                                                'assets/images/60875-confuse-person-1.png',
+                                            dialogImgWidth: 250,
+                                            dialogImgHeight: 250,
+                                            dialogTopText:
+                                                'Periksa Kembali Data Anda',
+                                            dialogBottomText:
+                                                'Anda yakin ingin kirim ke SRH?',
+                                            primaryBtText: 'Ya, Kirim SRH',
+                                            secondaryBtText: 'Kembali',
+                                            primaryBtIsShow: true,
+                                            secondaryBtIsShow: true,
+                                            primaryCallback: () {
+                                              Navigator.of(context,
+                                                      rootNavigator: true)
+                                                  .pop();
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) {
+                                                  return DialogRegular(
+                                                      dialogWidth: 596,
+                                                      dialogHeight: 496,
+                                                      dialogImg:
+                                                          'assets/images/59945-success-confetti 1.png',
+                                                      dialogImgWidth: 250,
+                                                      dialogImgHeight: 250,
+                                                      dialogTopText:
+                                                          'Berhasil!!',
+                                                      dialogBottomText:
+                                                          'Data berhasil dikirim',
+                                                      primaryBtText: '',
+                                                      secondaryBtText:
+                                                          'Kembali',
+                                                      primaryBtIsShow: false,
+                                                      secondaryBtIsShow: true,
+                                                      primaryCallback: () {},
+                                                      secondaryCallback: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      });
+                                                },
+                                              );
+                                            },
+                                            secondaryCallback: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          );
+                                        },
+                                      );
+                                    },
                                   ),
                                 ],
                               ),

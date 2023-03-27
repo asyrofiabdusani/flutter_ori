@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ori/modules/dashboard/components/to_do/to_do_table_content.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_ori/tokens/dart/dart_text.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_ori/widgets/table/paginated_3.dart';
 import 'package:flutter_ori/widgets/table/paginated_1.dart';
 import 'package:flutter_ori/bloc/to_do_menu.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_ori/widgets/table/styled_paginated_table.dart';
 
 class ToDoWg extends StatelessWidget {
   const ToDoWg({super.key});
@@ -360,28 +362,7 @@ class ToDoWg extends StatelessWidget {
         ),
 
         //? table content
-        BlocBuilder(
-          bloc: todoMenu,
-          builder: (context, state) {
-            return Column(
-              children: [
-                if (state == 1) ...[
-                  const PaginatedFirst(),
-                ] else if (state == 2) ...[
-                  const PaginatedSecond(),
-                ] else if (state == 3) ...[
-                  const PaginatedSecond(),
-                ] else if (state == 4) ...[
-                  const PaginatedThird(),
-                ] else if (state == 5) ...[
-                  const PaginatedThird(),
-                ] else if (state == 6) ...[
-                  const PaginatedSecond(),
-                ],
-              ],
-            );
-          },
-        ),
+        const ToDoTableContent(),
       ],
     );
   }
