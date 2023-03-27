@@ -77,6 +77,9 @@ class ClaimAsuransi extends StatelessWidget {
                               margin: const EdgeInsets.all(10),
                               child: Row(
                                 children: [
+                                  SizedBox(
+                                    width: 18,
+                                  ),
                                   AdButtonText(
                                     text: 'Batalkan Pengajuan',
                                     danger: true,
@@ -137,8 +140,21 @@ class ClaimAsuransi extends StatelessWidget {
                                       );
                                     },
                                   ),
+                                  const SizedBox(
+                                    width: 18,
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                    child: AdButtonSecondary(
+                                      text: 'Simpan Ke Draft',
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 18,
+                                  ),
                                   AdButtonPrimary(
-                                    text: ('Verifikasi Hasil'),
+                                    text: ('Kirim Ke SRH'),
                                     onPressed: () {
                                       showDialog(
                                         context: context,

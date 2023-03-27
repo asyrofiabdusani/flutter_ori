@@ -19,6 +19,8 @@ class AdTimelineTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TimelineTile(
+      afterLineStyle: const LineStyle(color: Color(0xffD0D5DD)),
+      beforeLineStyle: const LineStyle(color: Color(0xffD0D5DD)),
       indicatorStyle: IndicatorStyle(
           color: adrColor.textSuccess,
           iconStyle: IconStyle(iconData: Icons.check)),

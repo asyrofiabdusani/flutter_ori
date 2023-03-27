@@ -6,7 +6,8 @@ import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_ori/widgets/form/form_date_picker.dart';
 
 class FormPengajuanKlaim extends StatefulWidget {
-  const FormPengajuanKlaim({super.key});
+  bool? showEstButton = false;
+  FormPengajuanKlaim({super.key, this.showEstButton});
 
   @override
   State<FormPengajuanKlaim> createState() => _FormPengajuanKlaimState();
@@ -333,6 +334,10 @@ class _FormPengajuanKlaimState extends State<FormPengajuanKlaim> {
             ),
           ],
         ),
+        SizedBox(
+          height: 24,
+        ),
+        AdButtonSecondary(text: "Estimasi Nilai Pencairan", onPressed: () {})
       ],
     );
   }

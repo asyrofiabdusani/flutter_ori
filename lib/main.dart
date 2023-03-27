@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_ori/modules/dashboard/screens/dashboard.dart';
 import 'package:flutter_ori/modules/claim_asuransi/screens/claim_asuransi.dart';
+import 'package:flutter_ori/modules/monitoring_claim/components/form/form_bukti_kirim_berkas.dart';
 import 'package:flutter_ori/modules/monitoring_claim/screens/monitoring_claim.dart';
 import 'package:flutter_ori/modules/monitoring_claim/screens/monitoring_claim_banding.dart';
+import 'package:flutter_ori/modules/monitoring_claim/screens/monitoring_claim_draft.dart';
 import 'package:flutter_ori/widgets/modal/modal.dart';
-import 'package:flutter_ori/widgets/timeline/timeline.dart';
-import 'bloc/sidebar_menu.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
           '/monitoring_claim': (context) => const MonitoringClaim(),
           '/monitoring_claim/banding': (context) =>
               const MonitoringClaimBanding(),
+          '/monitoring_claim/draft': (context) => const MonitoringClaimDraft(),
           '/testing_widget': (context) => Modal(),
         },
       ),
