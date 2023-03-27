@@ -17,7 +17,7 @@ class _StyledModalState extends State<StyledModal> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      scrollable: true,
+      scrollable: false,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(adrSize.radiusSmall))),
       contentPadding: EdgeInsets.zero,
@@ -30,7 +30,7 @@ class _StyledModalState extends State<StyledModal> {
                   topRight: Radius.circular(adrSize.radiusSmall)),
               color: adrColor.backgroundPrimaryContainer,
             ),
-            width: MediaQuery.of(context).size.width * 0.5,
+            width: MediaQuery.of(context).size.width * 0.7,
             height: 52,
             child: ListTile(
               title: Padding(
@@ -48,9 +48,16 @@ class _StyledModalState extends State<StyledModal> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: widget.content,
+          SizedBox(
+            height: MediaQuery.of(context).size.height - 100,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Column(
+                  children: [widget.content],
+                ),
+              ),
+            ),
           ),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ori/modules/monitoring_claim/components/form/form_bukti_kirim_berkas.dart';
 import 'package:flutter_ori/widgets/modal/styled_modal.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/form/form_data_nasabah.dart';
 
 void main() {
   runApp(new MaterialApp(home: new Modal()));
@@ -26,7 +26,7 @@ class _ModalState extends State<Modal> {
                 builder: (BuildContext context) {
                   return StyledModal(
                     title: "Banding - 1",
-                    content: FormDataNasabah(),
+                    content: FormBuktiKirimBerkas(),
                   );
                 });
           },
