@@ -1,5 +1,3 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ori/tokens/dart/dart_color.dart';
 
@@ -29,13 +27,13 @@ class _StyledPaginatedTableState extends State<StyledPaginatedTable> {
     return Theme(
       data: ThemeData(
           cardColor: Colors.transparent,
-          cardTheme: CardTheme(elevation: 0),
+          cardTheme: const CardTheme(elevation: 0),
           dividerColor: adrColor.borderBase),
       child: Stack(
         children: [
           Container(
             height: 98,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -47,7 +45,7 @@ class _StyledPaginatedTableState extends State<StyledPaginatedTable> {
             width: double.infinity,
             decoration: BoxDecoration(
               border: Border.all(color: adrColor.borderBase),
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(10),
               ),
             ),
@@ -70,25 +68,3 @@ class _StyledPaginatedTableState extends State<StyledPaginatedTable> {
     );
   }
 }
-
-// class TableRow extends DataTableSource {
-//   @override
-//   DataRow? getRow(int index) {
-//     return DataRow.byIndex(index: index, cells: [
-//       DataCell(Text("Cell $index")),
-//       DataCell(Text("Cell $index")),
-//       DataCell(Text("Cell $index")),
-//       DataCell(Text("Cell $index")),
-//       DataCell(Text("Cell $index")),
-//     ]);
-//   }
-
-//   @override
-//   bool get isRowCountApproximate => true;
-
-//   @override
-//   int get rowCount => 50;
-
-//   @override
-//   int get selectedRowCount => 0;
-// }
