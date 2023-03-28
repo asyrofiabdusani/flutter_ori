@@ -88,7 +88,7 @@ class _FormBandingState extends State<FormBanding> {
             SizedBox(
               width: 24,
             ),
-            AdButtonPrimary(text: "Ajuka Banding", onPressed: () {}),
+            AdButtonPrimary(text: "Ajukan Banding", onPressed: () {}),
           ],
         )
       ],

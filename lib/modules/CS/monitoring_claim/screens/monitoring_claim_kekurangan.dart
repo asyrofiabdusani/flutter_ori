@@ -5,20 +5,18 @@ import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_histori_
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_jenis_asuransi.dart';
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_pengajuan_klaim.dart';
 import 'package:flutter_ori/modules/CS/monitoring_claim/components/accord/accord_tracking_progress.dart';
-import 'package:flutter_ori/modules/CS/monitoring_claim/components/form/form_banding.dart';
-import 'package:flutter_ori/modules/CS/monitoring_claim/components/accord/accord_histori_banding.dart';
+import 'package:flutter_ori/modules/CS/monitoring_claim/components/monitoring_claim_content.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/dialog/dialog_drop.dart';
 import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
-import 'package:flutter_ori/widgets/modal/styled_modal.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/timeline/timeline.dart';
 
-class MonitoringClaimBanding extends StatelessWidget {
-  const MonitoringClaimBanding({super.key});
+class MonitoringClaimKekurangan extends StatelessWidget {
+  const MonitoringClaimKekurangan({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,25 +42,25 @@ class MonitoringClaimBanding extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                       child: Column(
                         children: [
-                          const SizedBox(
+                          SizedBox(
                             height: 30,
                           ),
-                          const Accordion(
+                          Accordion(
                               title: "Data Nasabah",
                               content: AccordionDataNasabah()),
-                          const Accordion(
+                          Accordion(
                               title: "Jenis Asuransi",
                               content: AccordionJenisAsuransi()),
-                          const Accordion(
+                          Accordion(
                               title: "Histori Klaim",
                               content: AccordionHistoriKlaim()),
-                          const Accordion(
+                          Accordion(
                               title: "Pengajuan Klaim",
                               content: AccordionPengajuanKlaim()),
-                          const Accordion(
+                          Accordion(
                               title: "Dokumen Klaim",
                               content: AccordionDokumenKlaim()),
-                          const Accordion(
+                          Accordion(
                               title: "Tracking Progress",
                               content: AccordionTrackingProgress()),
                           Container(
@@ -141,25 +139,62 @@ class MonitoringClaimBanding extends StatelessWidget {
                                   const SizedBox(
                                     width: 18,
                                   ),
-                                  SizedBox(
-                                    height: 40,
-                                    child: AdButtonSecondary(
-                                      text: 'Ex-gratia',
-                                      onPressed: () {},
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 18,
-                                  ),
                                   AdButtonPrimary(
-                                    text: ('Banding'),
+                                    text: ('Perbarui Kekurangan'),
                                     onPressed: () {
                                       showDialog(
                                         context: context,
                                         builder: (context) {
-                                          return StyledModal(
-                                              title: "Banding - 1",
-                                              content: FormBanding());
+                                          return DialogRegular(
+                                            dialogWidth: 596,
+                                            dialogHeight: 496,
+                                            dialogImg:
+                                                'assets/images/60875-confuse-person-1.png',
+                                            dialogImgWidth: 250,
+                                            dialogImgHeight: 250,
+                                            dialogTopText:
+                                                'Periksa Kembali Data Anda',
+                                            dialogBottomText:
+                                                'Anda yakin ingin kirim ke SRH?',
+                                            primaryBtText: 'Ya, Kirim SRH',
+                                            secondaryBtText: 'Kembali',
+                                            primaryBtIsShow: true,
+                                            secondaryBtIsShow: true,
+                                            primaryCallback: () {
+                                              Navigator.of(context,
+                                                      rootNavigator: true)
+                                                  .pop();
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) {
+                                                  return DialogRegular(
+                                                      dialogWidth: 596,
+                                                      dialogHeight: 496,
+                                                      dialogImg:
+                                                          'assets/images/59945-success-confetti 1.png',
+                                                      dialogImgWidth: 250,
+                                                      dialogImgHeight: 250,
+                                                      dialogTopText:
+                                                          'Berhasil!!',
+                                                      dialogBottomText:
+                                                          'Data berhasil dikirim',
+                                                      primaryBtText: '',
+                                                      secondaryBtText:
+                                                          'Kembali',
+                                                      primaryBtIsShow: false,
+                                                      secondaryBtIsShow: true,
+                                                      primaryCallback: () {},
+                                                      secondaryCallback: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      });
+                                                },
+                                              );
+                                            },
+                                            secondaryCallback: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          );
                                         },
                                       );
                                     },

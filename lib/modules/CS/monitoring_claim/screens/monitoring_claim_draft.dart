@@ -1,12 +1,12 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/accord_data_nasabah.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/accord_dokumen_klaim.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/accord_jenis_asuransi.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/accord_pencarian.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/accord_histori_klaim.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/accord_pengajuan_klaim.dart';
+import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_data_nasabah.dart';
+import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_dokumen_klaim.dart';
+import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_jenis_asuransi.dart';
+import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_pencarian.dart';
+import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_histori_klaim.dart';
+import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_pengajuan_klaim.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/accordion.dart';

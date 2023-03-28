@@ -4,7 +4,7 @@ import 'package:flutter_ori/tokens/dart/dart_font.dart';
 import 'package:flutter_ori/tokens/dart/dart_text.dart';
 import 'package:flutter_ori/widgets/dialog/dialog_checklist.dart';
 import 'package:flutter_ori/widgets/dialog/dialog_text_area.dart';
-import '../../../tokens/aether.dart';
+import 'package:flutter_ori/tokens/aether.dart';
 import 'package:intl/intl.dart';
 
 class DataNasabahSearch extends StatefulWidget {

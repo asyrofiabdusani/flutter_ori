@@ -26,9 +26,13 @@ class _AccordionPengajuanKlaimState extends State<AccordionPengajuanKlaim> {
             height: 15,
           ),
           Container(
-            width: MediaQuery.of(context).size.width,
-            child: FormPengajuanKlaim(),
-          ),
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FormPengajuanKlaim(),
+                ],
+              )),
           SizedBox(
             height: 5,
           ),

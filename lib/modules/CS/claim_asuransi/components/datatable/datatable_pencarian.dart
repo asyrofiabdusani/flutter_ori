@@ -20,26 +20,6 @@ class _DataTablePencarianState extends State<DataTablePencarian> {
     return createDataTable();
   }
 
-  // AdDataTable createDataTable() {
-  //   return AdDataTable(
-  //     columns: _demoCreateColumns(),
-  //     rows: _demoCreateRows(),
-  //     headingRowColor: MaterialStateProperty.all<Color>(Color(0xFF101828)),
-  //     headingRowHeight: 75,
-  //     headingTextStyle: TextStyle(color: adrColor.textWhite),
-  //     showCheckboxColumn: false,
-  //     decoration: BoxDecoration(
-  //       borderRadius: BorderRadius.circular(adrSize.radiusMedium),
-  //       border:
-  //           Border.all(color: Colors.grey, style: BorderStyle.solid, width: 1),
-  //     ),
-  //     // decoration: BoxDecoration(
-  //     //   borderRadius: BorderRadius.circular(adrSize.radiusMedium),
-  //     //   // border: Border.all(color: Colors.grey),
-  //     // ),
-  //   );
-  // }
-
   StyledPaginatedTable createDataTable() {
     return StyledPaginatedTable(
         columns: _CreateColumns(), rows: TableRow(), rowPerPage: 5);

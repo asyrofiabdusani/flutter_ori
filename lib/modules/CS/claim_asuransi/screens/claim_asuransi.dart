@@ -7,9 +7,13 @@ import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_jenis_as
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_pencarian.dart';
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_histori_klaim.dart';
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_pengajuan_klaim.dart';
+import 'package:flutter_ori/tokens/aether.dart';
+import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
+import 'package:flutter_ori/widgets/dialog/dialog_drop.dart';
 
 class ClaimAsuransi extends StatelessWidget {
   const ClaimAsuransi({super.key});
@@ -35,34 +39,184 @@ class ClaimAsuransi extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const AppBar2(),
-                Padding(
-                  padding: const EdgeInsets.only(left: 32.0, right: 32.0),
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height - 55,
-                    child: SingleChildScrollView(
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 55,
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 32.0, right: 32.0),
                       child: Column(
-                        children: const [
-                          SizedBox(
+                        children: [
+                          const SizedBox(
                             height: 30,
                           ),
-                          Accordion(
+                          const Accordion(
                               title: "Pencarian",
                               content: AccordionPencarian()),
-                          Accordion(
+                          const Accordion(
                               title: "Data Nasabah",
                               content: AccordionDataNasabah()),
-                          Accordion(
+                          const Accordion(
                               title: "Jenis Asuransi",
                               content: AccordionJenisAsuransi()),
-                          Accordion(
+                          const Accordion(
                               title: "Histori Klaim",
                               content: AccordionHistoriKlaim()),
-                          Accordion(
+                          const Accordion(
                               title: "Pengajuan Klaim",
                               content: AccordionPengajuanKlaim()),
-                          Accordion(
+                          const Accordion(
                               title: "Dokumen Klaim",
                               content: AccordionDokumenKlaim()),
+                          Container(
+                            height: 104,
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(adrSize.radiusSmall),
+                              ),
+                              margin: const EdgeInsets.all(10),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 18,
+                                  ),
+                                  AdButtonText(
+                                    text: 'Batalkan Pengajuan',
+                                    danger: true,
+                                    onPressed: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return DialogDrop(
+                                              dialogWidth: 596,
+                                              dialogHeight: 514,
+                                              dialogImg:
+                                                  'assets/images/5527-alert-notification-character 1.png',
+                                              dialogImgWidth: 250,
+                                              dialogImgHeight: 250,
+                                              dialogTopText:
+                                                  'Apakah anda yakin ingin batalkan pengajuan?',
+                                              dialogBottomText:
+                                                  'Pilih Alasan pembatalan',
+                                              primaryBtText: 'Ya, Ubah Data',
+                                              secondaryBtText: 'Kembali',
+                                              primaryBtIsShow: true,
+                                              secondaryBtIsShow: true,
+                                              primaryCallback: () {
+                                                Navigator.of(context,
+                                                        rootNavigator: true)
+                                                    .pop();
+                                                showDialog(
+                                                  context: context,
+                                                  builder: (context) {
+                                                    return DialogRegular(
+                                                        dialogWidth: 596,
+                                                        dialogHeight: 496,
+                                                        dialogImg:
+                                                            'assets/images/59945-success-confetti 1.png',
+                                                        dialogImgWidth: 250,
+                                                        dialogImgHeight: 250,
+                                                        dialogTopText:
+                                                            'Berhasil!!',
+                                                        dialogBottomText:
+                                                            'Data berhasil dikirim',
+                                                        primaryBtText: '',
+                                                        secondaryBtText:
+                                                            'Kembali',
+                                                        primaryBtIsShow: false,
+                                                        secondaryBtIsShow: true,
+                                                        primaryCallback: () {},
+                                                        secondaryCallback: () {
+                                                          Navigator.of(context)
+                                                              .pop();
+                                                        });
+                                                  },
+                                                );
+                                              },
+                                              secondaryCallback: () {
+                                                Navigator.of(context).pop();
+                                              });
+                                        },
+                                      );
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    width: 18,
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                    child: AdButtonSecondary(
+                                      text: 'Simpan Ke Draft',
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 18,
+                                  ),
+                                  AdButtonPrimary(
+                                    text: ('Kirim Ke SRH'),
+                                    onPressed: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return DialogRegular(
+                                            dialogWidth: 596,
+                                            dialogHeight: 496,
+                                            dialogImg:
+                                                'assets/images/60875-confuse-person-1.png',
+                                            dialogImgWidth: 250,
+                                            dialogImgHeight: 250,
+                                            dialogTopText:
+                                                'Periksa Kembali Data Anda',
+                                            dialogBottomText:
+                                                'Anda yakin ingin kirim ke SRH?',
+                                            primaryBtText: 'Ya, Kirim SRH',
+                                            secondaryBtText: 'Kembali',
+                                            primaryBtIsShow: true,
+                                            secondaryBtIsShow: true,
+                                            primaryCallback: () {
+                                              Navigator.of(context,
+                                                      rootNavigator: true)
+                                                  .pop();
+                                              showDialog(
+                                                context: context,
+                                                builder: (context) {
+                                                  return DialogRegular(
+                                                      dialogWidth: 596,
+                                                      dialogHeight: 496,
+                                                      dialogImg:
+                                                          'assets/images/59945-success-confetti 1.png',
+                                                      dialogImgWidth: 250,
+                                                      dialogImgHeight: 250,
+                                                      dialogTopText:
+                                                          'Berhasil!!',
+                                                      dialogBottomText:
+                                                          'Data berhasil dikirim',
+                                                      primaryBtText: '',
+                                                      secondaryBtText:
+                                                          'Kembali',
+                                                      primaryBtIsShow: false,
+                                                      secondaryBtIsShow: true,
+                                                      primaryCallback: () {},
+                                                      secondaryCallback: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      });
+                                                },
+                                              );
+                                            },
+                                            secondaryCallback: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                         //children: [DashboardContent()],
 

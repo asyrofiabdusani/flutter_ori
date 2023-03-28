@@ -7,14 +7,15 @@ import 'package:flutter_ori/tokens/dart/dart_color.dart';
 import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/table/styled_paginated_table.dart';
 
-class DataTableHistoriKlaim extends StatefulWidget {
-  const DataTableHistoriKlaim({super.key});
+class DataTableHistoriBanding extends StatefulWidget {
+  const DataTableHistoriBanding({super.key});
 
   @override
-  State<DataTableHistoriKlaim> createState() => _DataTableHistoriKlaimState();
+  State<DataTableHistoriBanding> createState() =>
+      _DataTableHistoriBandingState();
 }
 
-class _DataTableHistoriKlaimState extends State<DataTableHistoriKlaim> {
+class _DataTableHistoriBandingState extends State<DataTableHistoriBanding> {
   @override
   Widget build(BuildContext context) {
     return createDataTable();
@@ -29,37 +30,17 @@ class _DataTableHistoriKlaimState extends State<DataTableHistoriKlaim> {
     return [
       const DataColumn(
           label: Text(
+        'Banding',
+        style: TextStyle(color: adrColor.textWhite),
+      )),
+      const DataColumn(
+          label: Text(
         'Tgl Pengajuan',
         style: TextStyle(color: adrColor.textWhite),
       )),
       const DataColumn(
           label: Text(
-        'Jenis Asuransi',
-        style: TextStyle(color: adrColor.textWhite),
-      )),
-      const DataColumn(
-          label: Text(
-        'Jenis Pelaporan',
-        style: TextStyle(color: adrColor.textWhite),
-      )),
-      const DataColumn(
-          label: Text(
-        'Jenis Klaim',
-        style: TextStyle(color: adrColor.textWhite),
-      )),
-      const DataColumn(
-          label: Text(
-        'Perusahaan Asuransi',
-        style: TextStyle(color: adrColor.textWhite),
-      )),
-      const DataColumn(
-          label: Text(
-        'Status Klaim',
-        style: TextStyle(color: adrColor.textWhite),
-      )),
-      const DataColumn(
-          label: Text(
-        'Detail Status',
+        'Alasan banding',
         style: TextStyle(color: adrColor.textWhite),
       )),
       const DataColumn(
@@ -75,10 +56,6 @@ class TableRow extends DataTableSource {
   @override
   DataRow? getRow(int index) {
     return DataRow.byIndex(index: index, cells: [
-      DataCell(Text("Cell $index")),
-      DataCell(Text("Cell $index")),
-      DataCell(Text("Cell $index")),
-      DataCell(Text("Cell $index")),
       DataCell(Text("Cell $index")),
       DataCell(Text("Cell $index")),
       DataCell(Text("Cell $index")),

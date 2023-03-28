@@ -15,10 +15,9 @@ import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
 import 'package:flutter_ori/widgets/modal/styled_modal.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
-import 'package:flutter_ori/widgets/timeline/timeline.dart';
 
-class MonitoringClaimBanding extends StatelessWidget {
-  const MonitoringClaimBanding({super.key});
+class MonitoringClaimExGratia extends StatelessWidget {
+  const MonitoringClaimExGratia({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +64,9 @@ class MonitoringClaimBanding extends StatelessWidget {
                           const Accordion(
                               title: "Tracking Progress",
                               content: AccordionTrackingProgress()),
+                          const Accordion(
+                              title: "Histori Banding",
+                              content: AccordionHistoriBanding()),
                           Container(
                             height: 104,
                             child: Card(

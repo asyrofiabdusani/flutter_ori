@@ -5,20 +5,18 @@ import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_histori_
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_jenis_asuransi.dart';
 import 'package:flutter_ori/modules/CS/claim_asuransi/components/accord_pengajuan_klaim.dart';
 import 'package:flutter_ori/modules/CS/monitoring_claim/components/accord/accord_tracking_progress.dart';
-import 'package:flutter_ori/modules/CS/monitoring_claim/components/form/form_banding.dart';
-import 'package:flutter_ori/modules/CS/monitoring_claim/components/accord/accord_histori_banding.dart';
+import 'package:flutter_ori/modules/CS/monitoring_claim/components/form/form_bukti_kirim_berkas.dart';
 import 'package:flutter_ori/tokens/aether.dart';
 import 'package:flutter_ori/tokens/dart/dart_size.dart';
 import 'package:flutter_ori/widgets/appbar/app_bar2.dart';
 import 'package:flutter_ori/widgets/dialog/dialog_drop.dart';
 import 'package:flutter_ori/widgets/dialog/dialog_regular.dart';
-import 'package:flutter_ori/widgets/modal/styled_modal.dart';
 import 'package:flutter_ori/widgets/sidebar/side_bar.dart';
 import 'package:flutter_ori/widgets/accordion.dart';
-import 'package:flutter_ori/widgets/timeline/timeline.dart';
+import 'package:flutter_ori/widgets/modal/styled_modal.dart';
 
-class MonitoringClaimBanding extends StatelessWidget {
-  const MonitoringClaimBanding({super.key});
+class MonitoringClaimBukti extends StatelessWidget {
+  const MonitoringClaimBukti({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -141,27 +139,18 @@ class MonitoringClaimBanding extends StatelessWidget {
                                   const SizedBox(
                                     width: 18,
                                   ),
-                                  SizedBox(
-                                    height: 40,
-                                    child: AdButtonSecondary(
-                                      text: 'Ex-gratia',
-                                      onPressed: () {},
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 18,
-                                  ),
                                   AdButtonPrimary(
-                                    text: ('Banding'),
+                                    text: ('Input Bukti Kirim'),
                                     onPressed: () {
                                       showDialog(
-                                        context: context,
-                                        builder: (context) {
-                                          return StyledModal(
-                                              title: "Banding - 1",
-                                              content: FormBanding());
-                                        },
-                                      );
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return StyledModal(
+                                              title: "Input Bukti Kirim Berkas",
+                                              content:
+                                                  const FormBuktiKirimBerkas(),
+                                            );
+                                          });
                                     },
                                   ),
                                 ],

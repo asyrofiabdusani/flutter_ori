@@ -86,13 +86,20 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           ],
         ),
         SizedBox(
-          height: 16,
+          height: 34,
+        ),
+        Text(
+          "Dokumen Lanjutan",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 34,
         ),
         Row(
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "BUKU KIR (KHUSUS MOBIL NIAGA)",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -114,7 +121,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "COPY KTP PELAPOR",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -136,7 +143,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "SURAT KUASA DEBITUR KE PELAPOR",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -158,7 +165,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "SURAT KETERANGAN HUBUNGAN PELAPOR DENGAN DEBITUR",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -180,7 +187,36 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "SURAT KETERANGAN DEALER MENGENAI BPKB",
+                hint: "Tgl Kirim",
+              ),
+            ),
+            SizedBox(
+              width: 32,
+            ),
+            Expanded(
+              child: FormDatePicker(
+                label: " ",
+                hint: "Tgl Terima",
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: 34,
+        ),
+        Text(
+          "Dokumen Tambahan",
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 34,
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: FormDatePickerCbox(
+                label: "FORM PELAPOR KERUGIAN KLAIM",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -202,7 +238,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "FORM ABANDONMENT",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -224,7 +260,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "LAPORAN POLISI / STPL",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -246,7 +282,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "STNK",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -268,7 +304,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "KUNCI KONTAK",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -290,7 +326,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "COPY SIM PENGEMUDI",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -312,7 +348,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "ESTIMASI KERUSAKAN DARI BENGKEL",
                 hint: "Tgl Kirim",
               ),
             ),
@@ -334,29 +370,7 @@ class _FormBuktiKirimBerkasState extends State<FormBuktiKirimBerkas> {
           children: [
             Expanded(
               child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
-                hint: "Tgl Kirim",
-              ),
-            ),
-            SizedBox(
-              width: 32,
-            ),
-            Expanded(
-              child: FormDatePicker(
-                label: " ",
-                hint: "Tgl Terima",
-              ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 16,
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: FormDatePickerCbox(
-                label: "FORM PELAPORAN KLAIM",
+                label: "LAPORAN POLISI / STPL",
                 hint: "Tgl Kirim",
               ),
             ),

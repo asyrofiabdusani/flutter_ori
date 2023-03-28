@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'data_nasabah.dart';
+import 'data_nasabah_search.dart';
+import 'package:flutter_ori/widgets/table/styled_paginated_table.dart';
+import 'table_monitoring.dart';
 
 class MonitoringClaimContent extends StatelessWidget {
   const MonitoringClaimContent({super.key});
@@ -16,7 +18,15 @@ class MonitoringClaimContent extends StatelessWidget {
             child: Card(
               child: Padding(
                 padding: const EdgeInsets.all(20),
-                child: DataNasabah(),
+                child: Column(
+                  children: [
+                    const DataNasabahSearch(),
+                    StyledPaginatedTable(
+                        columns: headDataColumnMonitoring(),
+                        rows: TableRowMonitoring(),
+                        rowPerPage: 5),
+                  ],
+                ),
               ),
             ),
           ),

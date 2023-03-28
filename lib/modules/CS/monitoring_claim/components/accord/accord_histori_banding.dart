@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ori/tokens/dart/dart_color.dart';
-import 'package:flutter_ori/tokens/dart/dart_size.dart';
-import 'package:flutter_ori/widgets/timeline/timeline.dart';
-import 'package:flutter_ori/tokens/aether.dart';
-import 'package:collection/collection.dart';
-import 'package:flutter_ori/modules/claim_asuransi/components/form/form_data_nasabah.dart';
+import 'package:flutter_ori/modules/CS/monitoring_claim/components/datatable/datatable_histori_banding.dart';
 
-class AccordionTrackingProgress extends StatefulWidget {
-  const AccordionTrackingProgress({Key? key}) : super(key: key);
+class AccordionHistoriBanding extends StatefulWidget {
+  const AccordionHistoriBanding({Key? key}) : super(key: key);
   @override
-  State<AccordionTrackingProgress> createState() =>
-      _AccordionTrackingProgressState();
+  State<AccordionHistoriBanding> createState() =>
+      _AccordionHistoriBandingState();
 }
 
-class _AccordionTrackingProgressState extends State<AccordionTrackingProgress> {
+class _AccordionHistoriBandingState extends State<AccordionHistoriBanding> {
   // Show or hide the content
   @override
   Widget build(BuildContext context) {
@@ -36,7 +31,7 @@ class _AccordionTrackingProgressState extends State<AccordionTrackingProgress> {
             width: MediaQuery.of(context).size.width,
             child: Container(
               decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-              child: AdTimeLine(),
+              child: DataTableHistoriBanding(),
             ),
           ),
           SizedBox(
