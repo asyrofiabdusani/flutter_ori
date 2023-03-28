@@ -7,7 +7,12 @@ import 'package:flutter_ori/tokens/dart/dart_size.dart';
 class StyledModal extends StatefulWidget {
   final String title;
   final Widget content;
-  const StyledModal({super.key, required this.title, required this.content});
+
+  const StyledModal({
+    super.key,
+    required this.title,
+    required this.content,
+  });
 
   @override
   State<StyledModal> createState() => _StyledModalState();
@@ -17,7 +22,7 @@ class _StyledModalState extends State<StyledModal> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      scrollable: false,
+      scrollable: true,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(adrSize.radiusSmall))),
       contentPadding: EdgeInsets.zero,
@@ -48,8 +53,11 @@ class _StyledModalState extends State<StyledModal> {
               ),
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height - 100,
+          ConstrainedBox(
+            constraints: new BoxConstraints(
+              minHeight: 100,
+              maxHeight: MediaQuery.of(context).size.height - 100,
+            ),
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(30.0),

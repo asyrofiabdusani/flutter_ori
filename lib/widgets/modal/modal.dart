@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ori/modules/monitoring_claim/components/form/form_bukti_kirim_berkas.dart';
+import 'package:flutter_ori/modules/CS/monitoring_claim/components/form/form_bukti_kirim_berkas.dart';
 import 'package:flutter_ori/widgets/modal/styled_modal.dart';
 
 void main() {
